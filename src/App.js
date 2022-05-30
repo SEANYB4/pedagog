@@ -10,6 +10,7 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Forum from './Pages/Forum';
 import ErrorPage from './Pages/ErrorPage';
+import Profile from './Pages/Profile';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
     <Router>
           <div className="head">
               <h1>Hello English Teachers</h1>
+              <div className='login'>
+                <button className='loginButton' onClick={console.log('Login')}>LOGIN</button>
+              </div> 
           </div>
 
          <div className='app'>
@@ -36,6 +40,9 @@ function App() {
                 <li>
                   <Link to="/forum">Forum</Link>
                 </li>
+                <li>
+                  <Link to="/profile">Profile</Link>
+                </li>
               </ul>
             </nav>
 
@@ -49,10 +56,12 @@ function App() {
 
                   <Route path='*' element={<ErrorPage />}/>
 
+                  <Route path='/profile/:username' element={<Profile />}/>
+
             </Routes>
 
           <div className='footer'>
-            Footer
+            <p>Copyright BainCorp</p>
           </div>
 
 

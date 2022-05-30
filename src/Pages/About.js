@@ -13,8 +13,6 @@ function About() {
                 THIS IS THE ABOUT PAGE <button onClick={() => {
                 navigate("/forum");
                 }}>Change to forum</button>
-            
-
         </div>
        
         )
