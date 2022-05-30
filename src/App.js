@@ -6,6 +6,11 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Forum from './Pages/Forum';
+import ErrorPage from './Pages/ErrorPage';
+
 
 function App() {
   return (
@@ -13,10 +18,10 @@ function App() {
     
     <Router>
           <div className="head">
-          <h1>Hello English Teachers</h1>
-         </div>
+              <h1>Hello English Teachers</h1>
+          </div>
 
-         <div>
+         <div className='app'>
             <nav className='nav'>
               <ul className='navList'>
                 <li>
@@ -34,24 +39,23 @@ function App() {
               </ul>
             </nav>
 
-            {/* <Routes>
-              <Route path="/about">
-                <About />
-              </Route>
+            <Routes>
+           
+                  <Route path='/' element={<Home />}/>
 
-              <Route path='/lessons'>
-                <Lessons />
-              </Route>
+                  <Route path='/about' element={<About />}/>
 
-              <Route path='/'>
-                <Home />
-              </Route>
+                  <Route path='/forum' element={<Forum />}/>
 
-              <Route path='/forum'>
-                <Forum />
-              </Route>
+                  <Route path='*' element={<ErrorPage />}/>
 
-            </Routes> */}
+            </Routes>
+
+          <div className='footer'>
+            Footer
+          </div>
+
+
          </div>
     </Router>
   );
@@ -59,20 +63,11 @@ function App() {
 
 
 
-function About() {
-  return <h2>Home</h2>
-}
 
 function Lessons() {
   return <h2>Lessons</h2>
 }
 
-function Home() {
-  return <h2>Home</h2>
-}
 
-function Forum() {
-  return <h2>Forum</h2>
-}
 
 export default App;
